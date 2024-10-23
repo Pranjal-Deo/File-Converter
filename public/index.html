@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn {
+            width: 100%;
+        }
+
+        /* Media Queries for Mobile Compatibility */
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.5em; /* Adjust header size for mobile */
+            }
+            .btn {
+                font-size: 1em; /* Increase button size for easier tapping */
+                padding: 12px; /* Increase padding for touch targets */
+            }
+            .form-group {
+                margin-bottom: 10px; /* Reduce margin for better spacing */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-file-upload"></i> File Converter</h1>
+        <form action="/convert" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fileUpload"><i class="fas fa-file"></i> Upload Files:</label>
+                <input type="file" name="files" id="fileUpload" multiple class="form-control" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="formatSelect"><i class="fas fa-exchange-alt"></i> Select Format:</label>
+                <select name="format" id="formatSelect" class="form-select" required>
+                    <option value="docx">PDF to DOCX</option>
+                    <option value="pdf">Image to PDF</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Convert</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
